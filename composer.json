@@ -1,6 +1,6 @@
 {
-  "name" : "mikycorp/adminbundle",
-  "description" : "A Admin bundle",
+  "name" : "mikycorp/adbundle",
+  "description" : "A Ad bundle",
   "type" : "symfony-bundle",
   "authors" : [{
     "name" : "Mathias Joseph",
@@ -27,10 +27,10 @@
   },
   "autoload" : {
     "psr-0" : {
-      "Miky\\Bundle\\AdminBundle" : ""
+      "Miky\\Bundle\\AdBundle" : ""
     }
   },
-  "target-dir" : "Miky/Bundle/AdminBundle",
+  "target-dir" : "Miky/Bundle/AdBundle",
   "repositories" : [{
   }],
   "extra" : {
