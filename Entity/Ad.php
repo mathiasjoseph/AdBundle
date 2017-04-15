@@ -2,16 +2,18 @@
 
 namespace Miky\Bundle\AdBundle\Entity;
 
+use Miky\Bundle\MediaBundle\Annotation\MediaProperty;
 use Miky\Component\Core\Model\CommonModelInterface;
 use Miky\Component\Core\Model\CommonModelTrait;
 use Doctrine\ORM\Mapping as ORM;
+use Miky\Component\Ad\Model\Ad as BaseAd;
 use Miky\Bundle\CoreBundle\Annotation\CommonModelAnnotation;
 
 /**
  * Ad
  * @CommonModelAnnotation(name="ad", timeProperties="enabledAt")
  */
-class Ad implements CommonModelInterface
+class Ad extends BaseAd implements CommonModelInterface
 {
     Use CommonModelTrait;
 
@@ -19,6 +21,11 @@ class Ad implements CommonModelInterface
      * @var int
      */
     private $id;
+
+    /**
+     * @MediaProperty()
+     */
+    protected $clan;
 
 
     /**
@@ -30,4 +37,22 @@ class Ad implements CommonModelInterface
     {
         return $this->id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getClan()
+    {
+        return $this->clan;
+    }
+
+    /**
+     * @param mixed $clan
+     */
+    public function setClan($clan)
+    {
+        $this->clan = $clan;
+    }
+
+
 }

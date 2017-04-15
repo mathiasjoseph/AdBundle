@@ -2,6 +2,7 @@
 
 namespace Miky\Bundle\AdBundle\DependencyInjection;
 
+use Miky\Bundle\CoreBundle\DependencyInjection\AbstractCoreExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -12,7 +13,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class MikyAdExtension extends Extension
+class MikyAdExtension extends AbstractCoreExtension
 {
     /**
      * {@inheritdoc}
@@ -24,5 +25,14 @@ class MikyAdExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+
+
+        $this->remapParametersNamespaces($config, $container, array(
+            '' => array(
+                'ad_class' => 'miky_ad.model.ad.class',
+            ),
+        ));
     }
+
+
 }
