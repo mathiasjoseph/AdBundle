@@ -11,7 +11,7 @@ use Miky\Bundle\CoreBundle\Annotation\CommonModelAnnotation;
 
 /**
  * Ad
- * @CommonModelAnnotation(name="ad", timeProperties="enabledAt")
+ * @CommonModelAnnotation(timeProperties="enabledAt")
  */
 class Ad extends BaseAd implements CommonModelInterface
 {
